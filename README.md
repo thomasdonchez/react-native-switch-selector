@@ -35,7 +35,7 @@ import SwitchSelector from "react-native-switch-selector";
 const options = [
   { label: "01:00", value: "1" },
   { label: "01:30", value: "1.5" },
-  { label: "02:00", value: "2" }
+  { label: "02:00", value: "2" },
 ];
 ```
 
@@ -43,9 +43,24 @@ you can also add `testID` and `accessibilityLabel` to each option:
 
 ```js
 const options = [
-  { label: "01:00", value: "1", testID: "switch-one", accessibilityLabel: "switch-one" },
-  { label: "01:30", value: "1.5", testID: "switch-one-thirty", accessibilityLabel: "switch-one-thirty" },
-  { label: "02:00", value: "2", testID: "switch-two", accessibilityLabel: "switch-two" }
+  {
+    label: "01:00",
+    value: "1",
+    testID: "switch-one",
+    accessibilityLabel: "switch-one",
+  },
+  {
+    label: "01:30",
+    value: "1.5",
+    testID: "switch-one-thirty",
+    accessibilityLabel: "switch-one-thirty",
+  },
+  {
+    label: "02:00",
+    value: "2",
+    testID: "switch-two",
+    accessibilityLabel: "switch-two",
+  },
 ];
 ```
 
@@ -53,7 +68,7 @@ const options = [
 <SwitchSelector
   options={options}
   initial={0}
-  onPress={value => console.log(`Call onPress with value: ${value}`)}
+  onPress={(value) => console.log(`Call onPress with value: ${value}`)}
 />
 ```
 
@@ -62,7 +77,7 @@ const options = [
 ```js
 <SwitchSelector
   initial={0}
-  onPress={value => this.setState({ gender: value })}
+  onPress={(value) => this.setState({ gender: value })}
   textColor={colors.purple} //'#7a44cf'
   selectedColor={colors.white}
   buttonColor={colors.purple}
@@ -70,7 +85,7 @@ const options = [
   hasPadding
   options={[
     { label: "Feminino", value: "f", imageIcon: images.feminino }, //images.feminino = require('./path_to/assets/img/feminino.png')
-    { label: "Masculino", value: "m", imageIcon: images.masculino } //images.masculino = require('./path_to/assets/img/masculino.png')
+    { label: "Masculino", value: "m", imageIcon: images.masculino }, //images.masculino = require('./path_to/assets/img/masculino.png')
   ]}
   testID="gender-switch-selector"
   accessibilityLabel="gender-switch-selector"
@@ -80,7 +95,7 @@ const options = [
 ### Props
 
 | Prop                         | Type                    | Default     | Required | Note                                                                             |
-| -------------------------    | ----------------------- | ----------- | -------- | -------------------------------------------------------------------------------- |
+| ---------------------------- | ----------------------- | ----------- | -------- | -------------------------------------------------------------------------------- |
 | options                      | array                   | null        | true     | Items array to render. Each item has a label and a value and optionals icons     |
 | options[].label              | string                  | null        | true     | Label from each item                                                             |
 | options[].value              | string                  | null        | true     | Value from each item                                                             |
@@ -118,6 +133,7 @@ const options = [
 | borderWidth                  | number                  | 1           | false    | Define border width                                                              |
 | testID                       | string                  | null        | false    | Test ID used for testing (e.g. with Appium)                                      |
 | accessibilityLabel           | string                  | null        | false    | Accessibility Label used for testing (e.g. with Appium)                          |
+| touchableProps               | object                  | {}          | false    | Custom props for TouchableOpacity element                                        |
 
 ### Authors
 
