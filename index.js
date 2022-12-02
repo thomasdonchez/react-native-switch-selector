@@ -70,7 +70,7 @@ export default class SwitchSelector extends Component {
     if (selected === -1) {
       return 'transparent';
     }
-    return options[selected].activeColor || buttonColor;
+    return options[selected]?.activeColor || buttonColor;
   }
 
   responderEnd = (evt, gestureState) => {
