@@ -121,6 +121,7 @@ export default class SwitchSelector extends Component {
     this.setState({ selected: index });
   };
 
+
   render() {
     const {
       style,
@@ -145,6 +146,7 @@ export default class SwitchSelector extends Component {
       options,
       accessibilityLabel,
       testID,
+      touchableProps,
     } = this.props;
 
     const { selected, sliderWidth } = this.state;
@@ -154,6 +156,7 @@ export default class SwitchSelector extends Component {
 
       return (
         <TouchableOpacity
+          {...touchableProps}
           key={index}
           disabled={disabled || element.disabled}
           style={[
@@ -296,6 +299,7 @@ SwitchSelector.defaultProps = {
   onPress: null,
   accessibilityLabel: null,
   testID: null,
+  touchableProps: {},
 };
 
 SwitchSelector.propTypes = {
@@ -328,4 +332,5 @@ SwitchSelector.propTypes = {
   onPress: PropTypes.func,
   accessibilityLabel: PropTypes.string,
   testID: PropTypes.string,
+  touchableProps: PropTypes.object,
 };

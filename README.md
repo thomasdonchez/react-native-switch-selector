@@ -118,6 +118,7 @@ const options = [
 | borderWidth                  | number                  | 1           | false    | Define border width                                                              |
 | testID                       | string                  | null        | false    | Test ID used for testing (e.g. with Appium)                                      |
 | accessibilityLabel           | string                  | null        | false    | Accessibility Label used for testing (e.g. with Appium)                          |
+| touchableProps               | object                  | {}          | false    | Custom props for TouchableOpacity element                                        |
 
 ### Authors
 
