@@ -75,7 +75,7 @@ export default class SwitchSelector extends Component {
 
   getTextColor() {
     const { selected } = this.state;
-    const { options, buttonColor } = this.props;
+    const { options, selectedColor } = this.props;
     if (selected === -1) {
       return 'transparent';
     }
@@ -140,7 +140,6 @@ export default class SwitchSelector extends Component {
       selectedTextContainerStyle,
       imageStyle,
       textColor,
-      selectedColor,
       fontSize,
       backgroundColor,
       borderColor,
