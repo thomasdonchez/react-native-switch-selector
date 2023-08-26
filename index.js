@@ -73,6 +73,15 @@ export default class SwitchSelector extends Component {
     return options[selected]?.activeColor || buttonColor;
   }
 
+  getTextColor() {
+    const { selected } = this.state;
+    const { options, buttonColor } = this.props;
+    if (selected === -1) {
+      return 'transparent';
+    }
+    return options[selected]?.activeTextColor || selectedColor;
+  }
+
   responderEnd = (evt, gestureState) => {
     const { disabled, options } = this.props;
     const { selected } = this.state;
@@ -177,7 +186,7 @@ export default class SwitchSelector extends Component {
                 {
                   height: 30,
                   width: 30,
-                  tintColor: isSelected ? selectedColor : textColor,
+                  tintColor: isSelected ? this.getTextColor() : textColor,
                 },
                 imageStyle,
               ]}
@@ -189,7 +198,7 @@ export default class SwitchSelector extends Component {
                 fontSize,
                 fontWeight: bold ? 'bold' : 'normal',
                 textAlign: 'center',
-                color: isSelected ? selectedColor : textColor,
+                color: isSelected ? this.getTextColor() : textColor,
                 backgroundColor: 'transparent',
               },
               isSelected ? selectedTextStyle : textStyle,

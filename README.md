@@ -87,6 +87,7 @@ const options = [
 | options[].customIcon         | Jsx element ou Function | null        | false    | Optional custom icon from each item                                              |
 | options[].imageIcon          | string                  | null        | false    | Source from a image icon form each item. Has the same color then label in render |
 | options[].activeColor        | string                  | null        | false    | Color from each item when is selected                                            |
+| options[].activeTextColor    | string                  | null        | false    | Text and icon color from each item when is selected                              |
 | options[].testID             | string                  | undefined   | false    | Test ID for each item used for testing (e.g. with Appium)                        |
 | options[].accessibilityLabel | string                  | undefined   | false    | Accessibility Label for each item used for testing (e.g. with Appium)            |
 | options[].disabled           | boolean                 | false       | false    | Disables an item                                                                 |
